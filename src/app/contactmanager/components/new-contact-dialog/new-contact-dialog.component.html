@@ -16,10 +16,13 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="user.name" required>
+            <input matInput [(ngModel)]="user.name" #name="ngModel" required>
+            <mat-error *ngIf="name.errors?.['required']">
+                You must enter a value
+            </mat-error>
         </mat-form-field>
         <br>
-            
+
         <mat-form-field appearance="fill">
             <mat-label>Bio</mat-label>
             <textarea matInput [(ngModel)]="user.bio"></textarea>
