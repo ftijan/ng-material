@@ -10,6 +10,7 @@ import { ContactmanagerAppComponent } from './contactmanager-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NotesComponent } from './components/notes/notes.component';
 
 const routes: Routes = [
   { path: '', component: ContactmanagerAppComponent,
@@ -25,7 +26,8 @@ const routes: Routes = [
     ContactmanagerAppComponent,
     ToolbarComponent,
     MainContentComponent,
-    SidenavComponent
+    SidenavComponent,
+    NotesComponent
   ],
   imports: [
     CommonModule,

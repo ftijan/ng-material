@@ -16,13 +16,12 @@
             <mat-tab-group>
                 <mat-tab label="Bio">
                     <p>
-                        {{ user.bio }}
+                        {{ user.bio }}                        
                     </p>
                 </mat-tab>
-                <!-- 
-                    <mat-tab label="Notes">                
-                    </mat-tab> 
-                -->
+                <mat-tab label="Notes">
+                    <app-notes [notes]="user.notes"></app-notes>
+                </mat-tab>               
             </mat-tab-group>            
         </mat-card-content>
     </mat-card>
