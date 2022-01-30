@@ -12,7 +12,7 @@ export class MainContentComponent implements OnInit {
   user?: User;
 
   constructor(private route: ActivatedRoute,
-    private service: UserService) { }
+    private service: UserService) { }  
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -31,5 +31,4 @@ export class MainContentComponent implements OnInit {
       });      
     })
   }
-
 }
