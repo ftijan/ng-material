@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Note } from '../../models/note';
 
@@ -15,6 +16,7 @@ export class NotesComponent implements OnInit, AfterViewInit, OnChanges {
   dataSource!: MatTableDataSource<Note>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor() { }
 
@@ -25,10 +27,11 @@ export class NotesComponent implements OnInit, AfterViewInit, OnChanges {
   
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource<Note>(this.notes);
+    this.dataSource = new MatTableDataSource<Note>(this.notes);    
   }
 
   // fix for issue with missing data on item selection change
