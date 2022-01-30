@@ -1,3 +1,4 @@
+import { Direction } from '@angular/cdk/bidi';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -17,7 +18,8 @@ export class SidenavComponent implements OnInit {
   public isScreenSmall: boolean = false;
 
   users: Observable<User[]> = new Observable<User[]>();
-  isDarkTheme: boolean = false;
+  isDarkTheme: boolean = false;  
+  textDirection: Direction = "ltr";
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -28,6 +30,10 @@ export class SidenavComponent implements OnInit {
 
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toggleDirection() {
+    this.textDirection = this.textDirection == 'ltr' ? 'rtl' : 'ltr';
   }
 
   ngOnInit(): void {
